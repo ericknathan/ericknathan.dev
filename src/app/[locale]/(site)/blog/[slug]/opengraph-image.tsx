@@ -29,7 +29,6 @@ export default async function Image({
   const { title, imageUrl } = payload;
   const { avatarUrl, noiseUrl, description } =
     await getOpenGraphData({
-      locale: params.locale,
       path: `/blog/${params.slug}`,
     });
 

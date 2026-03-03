@@ -45,10 +45,10 @@ export function CompanyThanksDialog() {
         >
           <Dialog.Content>
             <Dialog.Header>
-              <Dialog.Title>{t("title", { companyName })}</Dialog.Title>
+              <Dialog.Title>{t("title", { companyName: companyName ?? "" })}</Dialog.Title>
             </Dialog.Header>
             <Dialog.Description>
-              {t.rich("message", { companyName, br: () => <br /> })}
+              {t.rich("message", { companyName: companyName ?? "", br: () => <br /> })}
             </Dialog.Description>
             <Dialog.Footer className="grid grid-cols-2 gap-4">
               <Dialog.Close asChild>

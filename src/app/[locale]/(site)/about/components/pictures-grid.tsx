@@ -1,10 +1,11 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 
 interface PicturesGridProps {
   pictures: {
     src: string;
     alt: string;
-    legend: string | JSX.Element;
+    legend: string | ReactNode;
   }[];
 }
 

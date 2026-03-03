@@ -18,7 +18,7 @@ export default async function Image({
   params: { locale: string };
 }) {
   const { avatarUrl, noiseUrl, title, description } =
-    await getOpenGraphData({ locale: params.locale });
+    await getOpenGraphData({});
 
   return new ImageResponse(
     CreateOpenGraph({

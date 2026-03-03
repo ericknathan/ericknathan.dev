@@ -7,7 +7,7 @@ import {
   motion,
   useReducedMotion,
 } from "framer-motion";
-import { ReactHTML } from "react";
+import type { HTMLAttributes } from "react";
 
 type Without<T, K> = Pick<T, Exclude<keyof T, K>>;
 
@@ -17,7 +17,7 @@ interface FadeInProps extends HTMLMotionProps<"div"> {
   delay?: number;
   duration?: number;
   value?: number;
-  as?: Without<keyof ReactHTML, "template" | "slot">;
+  as?: Without<keyof HTMLAttributes<HTMLElement>, "template" | "slot">;
   initial?: Target;
   animate?: Target;
   exit?: Target;
