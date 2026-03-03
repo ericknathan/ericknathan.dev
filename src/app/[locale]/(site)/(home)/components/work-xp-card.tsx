@@ -9,14 +9,14 @@ interface WorkExperienceCardProps {
 }
 
 export async function WorkExperienceCard({ data }: WorkExperienceCardProps) {
-  const { company, startDate: rawStartDate, endDate: rawEndDate, image } = data;
+  const { id, company, startDate: rawStartDate, endDate: rawEndDate, image } = data;
 
   const startDate = new Date(rawStartDate);
   const endDate = rawEndDate ? new Date(rawEndDate) : undefined;
   const duration = calcDuration(startDate, endDate);
 
   const [role, t] = await Promise.all([
-    (await getTranslations("config"))(`roles.${company}` as any),
+    (await getTranslations("config"))(`roles.${id}` as any),
     getTranslations("components.experienceCard"),
   ]);
 

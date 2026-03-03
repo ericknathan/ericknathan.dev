@@ -114,12 +114,14 @@
       }
     },
     "roles": {
-      "Febrafar": "Desenvolvedor Front-end",
-      "Tixit": "Desenvolvedor Front-end",
-      "Pagtel": "Desenvolvedor Front-end",
-      "Senai": "Estudante em Desenvolvimento de Sistemas",
-      "FIAP": "Estudante em Análise e Desenvolvimento de Sistemas",
-      "Rocketseat": "Estudante em Desenvolvimento Full-stack"
+      "febrafar": "Desenvolvedor Front-end",
+      "tixit": "Desenvolvedor Front-end",
+      "pagtel": "Desenvolvedor Front-end",
+      "senai": "Técnico em Desenvolvimento de Sistemas",
+      "fiap-ads": "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+      "fiap-eng": "Bacharelado em Engenharia de Software",
+      "impacta": "Pós Graduação em Engenharia Front-end",
+      "rocketseat": "Estudante em Desenvolvimento Full-stack"
     },
     "projects": {
       "geniusxp": {

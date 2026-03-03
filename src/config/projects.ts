@@ -17,7 +17,7 @@ export const projectsList: ProjectModel[] = [
   {
     id: "geniusxp",
     name: "GeniusXP",
-    projectUrl: "https://geniusxp.tech",
+    projectUrl: "https://geniusxp.vercel.app",
     sourceUrl: "https://github.com/geniusxp/web",
     imagePreviewUrl: "/images/projects/geniusxp.png",
     category: "frontend",

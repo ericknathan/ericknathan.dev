@@ -51,6 +51,7 @@ export default async function HomePage(props: HomePageProps) {
               ({ type }) => type === "work"
             )}
           />
+          {/*
           <FadeIn
             to="top"
             startOnScrollIntersect
@@ -69,6 +70,7 @@ export default async function HomePage(props: HomePageProps) {
               </Link>
             </Button>
           </FadeIn>
+          */}
         </FadeIn>
         <FadeIn duration={0.5} delay={0.1} className="card flex flex-col gap-6">
           <SectionTitle title={t("education.title")} />

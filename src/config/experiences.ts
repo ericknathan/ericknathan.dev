@@ -1,5 +1,6 @@
 type ExperienceDate = `${number}-${number}-${number}`;
 export type ExperienceModel = {
+  id: string;
   company: string;
   startDate: ExperienceDate;
   endDate?: ExperienceDate;
@@ -10,6 +11,7 @@ export type ExperienceModel = {
 
 export const experiencesList: ExperienceModel[] = [
   {
+    id: "febrafar",
     company: "Febrafar",
     startDate: "2024-05-01",
     image: "/images/experiences/febrafar.png",
@@ -17,6 +19,7 @@ export const experiencesList: ExperienceModel[] = [
     highlight: true,
   },
   {
+    id: "tixit",
     company: "Tixit",
     startDate: "2023-10-01",
     endDate: "2024-04-01",
@@ -24,6 +27,7 @@ export const experiencesList: ExperienceModel[] = [
     type: "work",
   },
   {
+    id: "pagtel",
     company: "Pagtel",
     startDate: "2022-06-01",
     endDate: "2024-03-01",
@@ -31,6 +35,7 @@ export const experiencesList: ExperienceModel[] = [
     type: "work",
   },
   {
+    id: "senai",
     company: "Senai",
     startDate: "2021-01-01",
     endDate: "2022-06-30",
@@ -38,6 +43,7 @@ export const experiencesList: ExperienceModel[] = [
     type: "educational",
   },
   {
+    id: "fiap-ads",
     company: "FIAP",
     startDate: "2023-01-01",
     endDate: "2024-12-31",
@@ -45,8 +51,26 @@ export const experiencesList: ExperienceModel[] = [
     type: "educational",
   },
   {
+    id: "impacta",
+    company: "Impacta",
+    startDate: "2025-04-01",
+    endDate: "2026-03-31",
+    image: "/images/experiences/impacta.png",
+    type: "educational",
+  },
+  {
+    id: "fiap-eng",
+    company: "FIAP",
+    startDate: "2026-01-01",
+    endDate: "2029-12-31",
+    image: "/images/experiences/fiap.png",
+    type: "educational",
+  },
+  {
+    id: "rocketseat",
     company: "Rocketseat",
-    startDate: "2021-11-01",
+    startDate: "2021-01-01",
+    endDate: "2022-12-31",
     image: "/images/experiences/rocketseat.png",
     type: "educational",
   },

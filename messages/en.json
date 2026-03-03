@@ -114,12 +114,14 @@
       }
     },
     "roles": {
-      "Febrafar": "Front-end developer",
-      "Tixit": "Front-end developer",
-      "Pagtel": "Front-end developer",
-      "Senai": "Systems development student",
-      "FIAP": "Analysis and systems development student",
-      "Rocketseat": "Full-stack development student"
+      "febrafar": "Front-end developer",
+      "tixit": "Front-end developer",
+      "pagtel": "Front-end developer",
+      "senai": "Systems development technician",
+      "fiap-ads": "Analysis and systems development technician",
+      "fiap-eng": "Software Engineering bachelor",
+      "impacta": "Front-end engineering postgraduate",
+      "rocketseat": "Full-stack development student"
     },
     "projects": {
       "geniusxp": {
@@ -269,7 +271,7 @@
       "role": "Role",
       "date": "Date",
       "present": "Present",
-      "duration": "{years, plural, =0 {} =1 {# yr} other {# yrs}} {months, plural, =0 {# mo} =1 {# mo} other {# mos}}"
+      "duration": "{years, plural, =0 {} =1 {# yr} other {# yrs}} {months, plural, =0 {} =1 {# mo} other {# mos}}"
     }
   }
 }
