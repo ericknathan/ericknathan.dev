@@ -1,5 +1,6 @@
 import { openGraphDefaultCover, websiteUrl } from "@/config";
 import { createTranslator } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 /* eslint-disable @next/next/no-img-element */
 interface CreateOpenGraphProps {
@@ -98,14 +99,11 @@ export function CreateOpenGraph({
 }
 
 export async function getOpenGraphData({
-  locale,
   path,
 }: {
-  locale: string;
   path?: string;
 }) {
-  const messages = (await import(`/messages/${locale}.json`)).default;
-  const t = createTranslator({ locale, messages });
+  const t = await getTranslations("config.metadata.opengraph");
 
   const avatarUrl = await fetch(
     new URL("../../assets/opengraph/avatar.png", import.meta.url)
@@ -118,7 +116,7 @@ export async function getOpenGraphData({
   return {
     avatarUrl,
     noiseUrl,
-    title: t("config.metadata.opengraph.title"),
+    title: t("title"),
     description: path || websiteUrl.split("//")[1],
   };
 }

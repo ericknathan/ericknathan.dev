@@ -1,4 +1,3 @@
-import { createTranslator } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { AuthContextProvider } from "@/contexts";
@@ -44,13 +43,10 @@ export default async function GestbookPage(props: GuestbookPageProps) {
 }
 
 export async function generateMetadata(props: GuestbookPageProps) {
-  const { locale } = await props.params;
-
-  const messages = (await import(`/messages/${locale}.json`)).default;
-  const t = createTranslator({ locale, messages });
+  const t = await getTranslations("pages.guestbook");
 
   return {
-    title: t("pages.guestbook.title"),
-    description: t("pages.guestbook.description"),
+    title: t("title"),
+    description: t("description"),
   };
 }

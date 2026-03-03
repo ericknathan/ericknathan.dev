@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { createTranslator } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 
@@ -63,12 +62,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  props: RootLayoutProps
 ): Promise<Metadata> {
-  const { locale } = await props.params;
-
-  const messages = (await import(`/messages/${locale}.json`)).default;
-  const t = createTranslator({ locale, messages });
+  const t = await getTranslations("config");
 
   let languages: Record<string, URL> = {};
 
@@ -76,14 +71,14 @@ export async function generateMetadata(
     languages[loc] = new URL(`${websiteUrl}/${loc}`);
   });
 
-  const title = `${userData.name} - ${t("config.userData.role")}`;
+  const title = `${userData.name} - ${t("userData.role")}`;
 
   return {
     title: {
       template: "%s",
       default: title,
     },
-    description: t("config.metadata.description"),
+    description: t("metadata.description"),
     authors: [
       {
         name: userData.name,
@@ -100,7 +95,7 @@ export async function generateMetadata(
     },
     twitter: {
       title: title,
-      description: t("config.metadata.description"),
+      description: t("metadata.description"),
       siteId: userData.twitter.id,
       creator: userData.twitter.username,
       creatorId: userData.twitter.id,
@@ -109,7 +104,7 @@ export async function generateMetadata(
     openGraph: {
       type: "website",
       title: title,
-      description: t("config.metadata.description"),
+      description: t("metadata.description"),
       url: "/opengraph-image",
     },
     applicationName: title,

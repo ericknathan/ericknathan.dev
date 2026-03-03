@@ -10,17 +10,9 @@ export async function InternalizationProvider({
   children,
   locale,
 }: InternalizationProviderProps) {
-  let messages;
-  try {
-    messages = (await import(`/messages/${locale}.json`)).default;
-  } catch (error) {
-    notFound();
-  }
-
   return (
     <NextIntlClientProvider
       locale={locale}
-      messages={messages}
       timeZone="America/Sao_Paulo"
     >
       {children}

@@ -1,4 +1,3 @@
-import { createTranslator } from "next-intl";
 import Link from "next/link";
 
 import { projectsCategories, projectsList } from "@/config";
@@ -83,12 +82,9 @@ export default async function ProjectsPage(props: ProjectsPageProps) {
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await props.params;
-
-  const messages = (await import(`/messages/${locale}.json`)).default;
-  const t = createTranslator({ locale, messages });
+  const t = await getTranslations("pages.projects");
 
   return {
-    title: t("pages.projects.title"),
+    title: t("title"),
   };
 }

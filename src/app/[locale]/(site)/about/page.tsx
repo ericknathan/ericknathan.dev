@@ -1,4 +1,3 @@
-import { createTranslator } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
@@ -33,13 +32,10 @@ export default async function AboutPage(props: AboutPageProps) {
   );
 }
 
-export async function generateMetadata(props: AboutPageProps) {
-  const { locale } = await props.params;
-
-  const messages = (await import(`/messages/${locale}.json`)).default;
-  const t = createTranslator({ locale, messages });
+export async function generateMetadata() {
+  const t = await getTranslations("pages.about");
 
   return {
-    title: t("pages.about.title"),
+    title: t("title"),
   };
 }

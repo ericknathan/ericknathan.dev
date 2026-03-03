@@ -102,16 +102,11 @@ export default async function UsesPage(props: UsesPageProps) {
   );
 }
 
-export async function generateMetadata(props: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await props.params;
-
-  const messages = (await import(`/messages/${locale}.json`)).default;
-  const t = createTranslator({ locale, messages });
+export async function generateMetadata() {
+  const t = await getTranslations("pages.uses");
 
   return {
-    title: t("pages.uses.title"),
-    description: t("pages.uses.description"),
+    title: t("title"),
+    description: t("description"),
   };
 }
